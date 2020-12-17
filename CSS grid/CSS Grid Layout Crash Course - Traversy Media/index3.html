@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* 3 coloane, 1 de 1f, a doua de 2fr si a 3-a de 1fr */
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 1em;
+            justify-items: stretch; /* aranjeaza elementele pe Oy. Le intinde pe toata suprafata */
+            align-items: stretch; /* aranjeaza elementele pe Ox. Le intinde pe toata suprafata */
+        }
+
+        .wrapper > div {
+            background: #eee;
+            padding: 1em;
+        }
+
+        .wrapper > div:nth-child(odd) {
+            background-color: #ddd;
+        }
+
+        .box1 {
+           /* align-self: start; aici le aliniezi pe fiecare individal */
+           grid-column: 1/3; /*aici box1 se va intinde de la coloana 1 la coloana 3 */
+           grid-row: 1/3; /*astea le impinge in jos. adica exact ca mai sus doar ca la randuri */
+        }
+
+        .box2 {
+           /* align-self: end;*/
+           grid-column: 3; /*aici ramane la coloane 3... pana la capat? */
+           grid-row: 1/3;
+        }
+
+        .box3 {
+           /* justify-self: end; */
+           grid-column: 2/4;
+           grid-row: 3;
+        }
+
+        .box4 {
+            grid-column: 1; /* incepe de la coloana 1 */
+            grid-row: 2/4; /* incepe de pe randul 2 (chiar daca exista deja acolo un element si merge pana la randul 4) */
+            border: 1px solid #333;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+         <div class="box box1">Box 1</div>
+         <div class="box box2">Box 2</div>
+         <div class="box box3">Box 3</div>
+         <div class="box box4">Box 4</div>
+    </div>
+</body>
+</html>
