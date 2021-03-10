@@ -1,0 +1,272 @@
+@import 'reset';
+@import 'variables';
+@import 'typography';
+@import 'reset';
+@import 'base';
+@import 'loader';
+
+* {
+  background-color: $background;
+  font-family: $second-font;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100vw;
+  box-sizing: border-box;
+  header {
+    height: 50px;
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid $gray;
+    #logo {
+      font-family: $second-font;
+      color: $light-text;
+      font-size: 2.5em;
+      font-weight: lighter;
+      margin-left: 20px;
+    }
+
+    .navBar {
+      padding-right: 10px;
+
+      .navBtn {
+        font-size: 0.9em;
+        border: none;
+        padding: 20px 10px;
+
+        &:hover {
+          background-color: $gray;
+        }
+      }
+    }
+  }
+
+  section#mainPageSection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 10px 40px;
+
+    // display: grid;
+    // grid-template-columns: 309px max-content;
+    // grid-auto-rows: auto;
+    // gap: 20px;
+    margin: 10px 40px;
+
+    .contact {
+      margin-top: 40px;
+      padding: 22px;
+      min-height: 368px;
+      width: 261px;
+      background-color: $dark-blue;
+
+      .fa-address-book {
+        background: transparent;
+        color: $white;
+
+        span {
+          background: transparent;
+          font-family: $second-font;
+          font-size: 0.7em;
+          margin-left: 18px;
+          position: relative;
+          bottom: 3px;
+        }
+      }
+
+      .cartDescription {
+        background: transparent;
+        color: $white;
+        font-size: 1em;
+      }
+
+      .fa-cart-arrow-down {
+        background: transparent;
+        color: $white;
+
+        span {
+          background: transparent;
+          font-family: $second-font;
+          font-size: 0.7em;
+          font-weight: 400;
+          margin-left: 18px;
+          position: relative;
+          bottom: 3px;
+        }
+      }
+
+      .cartTracker {
+        background: transparent;
+        margin-top: 17px;
+        min-height: 167px;
+        border: 2px dashed $white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .cartItem {
+          color: $white;
+          background: transparent;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+
+    .gridContainer {
+      height: 80vh;
+      max-width: 80vw;
+      margin: 40px 30px 0 0;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(221px, 1fr));
+      grid-auto-rows: auto;
+      // align-items: start;
+      gap: 35px;
+
+      .gridElement {
+        align-self: start;
+        height: auto;
+        width: 221px;
+        border: 1px solid $gray;
+        // overflow: hidden;
+        background-color: $white;
+        &:hover {
+          cursor: pointer;
+        }
+
+        img {
+          height: 200px;
+          width: 100%;
+        }
+
+        h3,
+        p {
+          margin: 0;
+          font-family: $main-font;
+        }
+
+        h3 {
+          color: $dark-text;
+          padding: 8px;
+        }
+
+        p {
+          color: $light-text;
+          padding: 0 0 32px 8px;
+        }
+      }
+    }
+  }
+
+  section.aboutPage {
+    height: 70vh;
+    width: 54vw;
+    margin: 100px auto;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .fa-address-card {
+      color: $light-blue;
+    }
+
+    .aboutH2 {
+      color: $dark-text;
+      background-color: $white;
+    }
+
+    .aboutText {
+      width: 57%;
+      background-color: $white;
+      color: $light-text;
+    }
+  }
+
+  section.contactPage {
+    @extend section.aboutPage;
+
+    > * {
+      background-color: $white;
+    }
+
+    h2.contactH2 {
+      color: $dark-text;
+    }
+
+    p.contactText {
+      color: $light-text;
+    }
+  }
+
+  .maximizeElement {
+    max-width: 710px;
+    height: fit-content;
+    background-color: $light-blue;
+    display: flex;
+    flex-direction: column;
+
+    * {
+      background-color: $light-blue;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 500px;
+    }
+
+    .description {
+      padding: 20px;
+      h3.descriptionTitle {
+        margin-top: 0;
+        border-top: 0;
+        color: $white;
+      }
+      .descriptionAndBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        p {
+          color: $white;
+          font-size: 0.7em;
+          margin-right: 10px;
+        }
+
+        .addToCartBtn {
+          color: $white;
+          padding: 10px 40px;
+          font-size: 1.2em;
+          background-color: $accent;
+          border: none;
+          &:focus {
+            background-color: $dark-blue;
+          }
+        }
+
+        #backToMainList {
+          color: $white;
+          padding: 10px 40px;
+          font-size: 1.2em;
+          background-color: $accent;
+          border: none;
+          margin-left: 50px;
+          &:focus {
+            background-color: $dark-blue;
+          }
+        }
+      }
+    }
+  }
+}
